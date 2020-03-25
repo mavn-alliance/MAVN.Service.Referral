@@ -1,0 +1,114 @@
+ReferralService:
+    Db:
+        LogsConnString:
+            settings-key: ReferralService-LogsConnString
+            types:
+              - AzureTableStorage
+        DataConnString:
+            settings-key: ReferralService-DataConnString
+            types:
+              - AzureTableStorage
+        MsSqlConnectionString:
+            settings-key: ReferralService-MsSqlConnectionString
+    RabbitMq:
+        RabbitMqConnectionString:
+             settings-key: ReferralRabbitMQ
+             types:
+                - RabbitMq
+    IsRealEstateFeatureDisabled:
+        settings-key: IsRealEstateFeatureDisabled
+        types:
+            - Optional
+    BaseCurrencyCode:
+          settings-key: Constant-BaseCurrencyCode
+    ReferralCodeLength:
+        settings-key: ReferralService-ReferralCodeLength
+    DemoOperationDelay:
+        settings-key: ReferralService-DemoOperationDelay
+    EmailDemoIdentifier:
+        settings-key: DemoModeEmailSuffix
+    UseShortenedLeadUrl:
+          settings-key: ReferralService-UseShortenedLeadUrl
+    LeadConfirmationTokenLength:
+        settings-key: ReferralService-LeadConfirmationTokenLength
+    ReferralHotelLimitPeriod:
+        settings-key: ReferralService-ReferralHotelLimitPeriod
+    ReferralHotelLimit:
+        settings-key: ReferralService-ReferralHotelLimit
+    ReferralHotelExpirationPeriod:
+        settings-key: ReferralService-ReferralHotelExpirationPeriod
+    HotelReferralConfirmEmailSettings:
+        ConfirmLinkFormat:
+            settings-key: ReferralService-HotelReferralConfirmEmailSettingsConfirmLinkFormat
+        EmailTemplateId:
+            settings-key: ReferralService-HotelReferralConfirmEmailSettingsEmailTemplateId
+        SubjectTemplateId:
+            settings-key: ReferralService-HotelReferralConfirmEmailSettingsSubjectTemplateId
+        HotelReservationLink:
+            settings-key: ReferralService-HotelReferralConfirmEmailSettingsHotelReservationLink
+    FriendReferralConfirmEmailSettings:
+        EmailTemplateId:
+            settings-key: ReferralService-FriendReferralConfirmEmailSettingsEmailTemplateId
+        SubjectTemplateId:
+            settings-key: ReferralService-FriendReferralConfirmEmailSettingsSubjectTemplateId
+        ConfirmLinkFormat:
+            settings-key: ReferralService-FriendReferralEmailSettingsConfirmLinkFormat
+    LeadConfirmSmsSettings:
+        ConfirmLinkFormat:
+            settings-key: ReferralService-LeadConfirmEmailSettingsConfirmLinkFormat
+        SmsTemplateId:
+            settings-key: ReferralService-LeadConfirmSmsSettingsSmsTemplateId
+    LeadAlreadyConfirmedEmailSettings:
+        EmailTemplateId:
+            settings-key: ReferralService-LeadAlreadyConfirmedEmailSettingsEmailTemplateId
+        SubjectTemplateId:
+            settings-key: ReferralService-LeadAlreadyConfirmedEmailSettingsSubjectTemplateId
+    LeadSuccessfullyConfirmedEmailSettings:
+        EmailTemplateId:
+            settings-key: ReferralService-LeadSuccessfullyConfirmedEmailSettingsEmailTemplateId
+        SubjectTemplateId:
+            settings-key: ReferralService-LeadSuccessfullyConfirmedEmailSettingsSubjectTemplateId
+    LeadSuccessfullyConfirmedPushNotificationSettings:
+        TemplateId:
+            settings-key: ReferralService-LeadSuccessfullyConfirmedPushNotificationTemplateId
+        DeepLinkRoute:
+            settings-key: ReferralService-LeadSuccessfullyConfirmedPushNotificationDeepLinkRoute
+PropertyIntegrationServiceClientSettings:
+    ServiceUrl:
+        settings-key: PropertyIntegrationServiceUrl
+AgentManagementServiceClient:
+    ServiceUrl:
+        settings-key: AgentManagementServiceUrl
+DictionariesServiceClient:
+    ServiceUrl:
+        settings-key: DictionariesServiceUrl
+CurrencyConvertorServiceClient:
+    ServiceUrl:
+        settings-key: CurrencyConvertorServiceUrl
+CustomerProfileServiceClient:
+    ServiceUrl:
+        settings-key: CustomerProfileServiceUrl
+CampaignServiceClient:
+    ServiceUrl:
+        settings-key: CampaignServiceUrl
+StakingServiceClient:
+    ServiceUrl:
+        settings-key: StakingServiceUrl
+PartnerManagementServiceClient:
+  ServiceUrl:
+    settings-key: PartnerManagementServiceUrl
+UrlShortenerServiceClient:
+    ServiceUrl:
+        settings-key: UrlShortenerServiceUrl
+SlackNotifications:
+    AzureQueue:
+        ConnectionString:
+            settings-key: SlackNotificationsConnString
+            types:
+                - AzureTableStorage
+        QueueName:
+            settings-key: SlackQueueName
+MonitoringServiceClient:
+    MonitoringServiceUrl:
+        settings-key: MonitoringServiceUrl
+
