@@ -22,7 +22,7 @@ namespace MAVN.Service.Referral.MsSqlRepositories.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Lykke.Service.Referral.MsSqlRepositories.Entities.FriendReferralEntity", b =>
+            modelBuilder.Entity("MAVN.Service.Referral.MsSqlRepositories.Entities.FriendReferralEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,7 +48,7 @@ namespace MAVN.Service.Referral.MsSqlRepositories.Migrations
                     b.ToTable("friend_referral");
                 });
 
-            modelBuilder.Entity("Lykke.Service.Referral.MsSqlRepositories.Entities.OfferToPurchaseEntity", b =>
+            modelBuilder.Entity("MAVN.Service.Referral.MsSqlRepositories.Entities.OfferToPurchaseEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,7 +67,7 @@ namespace MAVN.Service.Referral.MsSqlRepositories.Migrations
                     b.ToTable("offer_to_purchase");
                 });
 
-            modelBuilder.Entity("Lykke.Service.Referral.MsSqlRepositories.Entities.PropertyPurchaseEntity", b =>
+            modelBuilder.Entity("MAVN.Service.Referral.MsSqlRepositories.Entities.PropertyPurchaseEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -89,7 +89,7 @@ namespace MAVN.Service.Referral.MsSqlRepositories.Migrations
                     b.ToTable("property_purchase");
                 });
 
-            modelBuilder.Entity("Lykke.Service.Referral.MsSqlRepositories.Entities.PurchaseReferralHistoryEntity", b =>
+            modelBuilder.Entity("MAVN.Service.Referral.MsSqlRepositories.Entities.PurchaseReferralHistoryEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -110,7 +110,7 @@ namespace MAVN.Service.Referral.MsSqlRepositories.Migrations
                     b.ToTable("purchase_referral");
                 });
 
-            modelBuilder.Entity("Lykke.Service.Referral.MsSqlRepositories.Entities.ReferralEntity", b =>
+            modelBuilder.Entity("MAVN.Service.Referral.MsSqlRepositories.Entities.ReferralEntity", b =>
                 {
                     b.Property<Guid>("CustomerId")
                         .ValueGeneratedOnAdd()
@@ -129,7 +129,7 @@ namespace MAVN.Service.Referral.MsSqlRepositories.Migrations
                     b.ToTable("customer_referral");
                 });
 
-            modelBuilder.Entity("Lykke.Service.Referral.MsSqlRepositories.Entities.ReferralHotelEntity", b =>
+            modelBuilder.Entity("MAVN.Service.Referral.MsSqlRepositories.Entities.ReferralHotelEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -189,7 +189,7 @@ namespace MAVN.Service.Referral.MsSqlRepositories.Migrations
                     b.ToTable("referral_hotel");
                 });
 
-            modelBuilder.Entity("Lykke.Service.Referral.MsSqlRepositories.Entities.ReferralLeadEntity", b =>
+            modelBuilder.Entity("MAVN.Service.Referral.MsSqlRepositories.Entities.ReferralLeadEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -242,30 +242,30 @@ namespace MAVN.Service.Referral.MsSqlRepositories.Migrations
                     b.ToTable("referral_lead");
                 });
 
-            modelBuilder.Entity("Lykke.Service.Referral.MsSqlRepositories.Entities.OfferToPurchaseEntity", b =>
+            modelBuilder.Entity("MAVN.Service.Referral.MsSqlRepositories.Entities.OfferToPurchaseEntity", b =>
                 {
-                    b.HasOne("Lykke.Service.Referral.MsSqlRepositories.Entities.ReferralLeadEntity")
+                    b.HasOne("MAVN.Service.Referral.MsSqlRepositories.Entities.ReferralLeadEntity")
                         .WithMany("OffersToPurchase")
                         .HasForeignKey("ReferId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
-            modelBuilder.Entity("Lykke.Service.Referral.MsSqlRepositories.Entities.PropertyPurchaseEntity", b =>
+            modelBuilder.Entity("MAVN.Service.Referral.MsSqlRepositories.Entities.PropertyPurchaseEntity", b =>
                 {
-                    b.HasOne("Lykke.Service.Referral.MsSqlRepositories.Entities.ReferralLeadEntity")
+                    b.HasOne("MAVN.Service.Referral.MsSqlRepositories.Entities.ReferralLeadEntity")
                         .WithMany("PropertyPurchases")
                         .HasForeignKey("ReferralLeadId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
-            modelBuilder.Entity("Lykke.Service.Referral.MsSqlRepositories.Entities.PurchaseReferralHistoryEntity", b =>
+            modelBuilder.Entity("MAVN.Service.Referral.MsSqlRepositories.Entities.PurchaseReferralHistoryEntity", b =>
                 {
-                    b.HasOne("Lykke.Service.Referral.MsSqlRepositories.Entities.ReferralEntity", "Referred")
+                    b.HasOne("MAVN.Service.Referral.MsSqlRepositories.Entities.ReferralEntity", "Referred")
                         .WithMany("PurchasesReferred")
                         .HasForeignKey("ReferredId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Lykke.Service.Referral.MsSqlRepositories.Entities.ReferralEntity", "Referrer")
+                    b.HasOne("MAVN.Service.Referral.MsSqlRepositories.Entities.ReferralEntity", "Referrer")
                         .WithMany("PurchaseReferrers")
                         .HasForeignKey("ReferrerId")
                         .OnDelete(DeleteBehavior.Restrict);
