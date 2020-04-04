@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Falcon.Common" Version="0.2.2" />
+    <PackageReference Include="Falcon.Service.AgentManagement.Client" Version="4.2.1" />
+    <PackageReference Include="Falcon.Service.CurrencyConvertor.Client" Version="4.0.0" />
+    <PackageReference Include="Falcon.Service.CustomerManagement.Contract" Version="6.0.0" />
+    <PackageReference Include="Falcon.Service.CustomerProfile.Client" Version="7.7.0" />
+    <PackageReference Include="Falcon.Service.Dictionaries.Client" Version="1.3.0" />
+    <PackageReference Include="Falcon.Service.MAVNPropertyIntegration.Client" Version="4.5.0" />
+    <PackageReference Include="Falcon.Service.MAVNPropertyIntegration.Contract" Version="3.3.0" />
+    <PackageReference Include="Falcon.Service.NotificationSystem.SubscriberContract" Version="1.0.2" />
+    <PackageReference Include="Lykke.RabbitMqBroker" Version="7.13.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\contract\MAVN.Service.Referral.Contract\MAVN.Service.Referral.Contract.csproj" />
+    <ProjectReference Include="..\MAVN.Service.Referral.Domain\MAVN.Service.Referral.Domain.csproj" />
+  </ItemGroup>
+</Project>

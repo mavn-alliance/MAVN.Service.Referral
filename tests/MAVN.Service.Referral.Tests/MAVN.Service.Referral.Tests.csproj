@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".\xunit.runner.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoFixture" Version="4.11.0" />
+    <PackageReference Include="Falcon.Service.CustomerProfile.Client" Version="7.7.0" />
+    <PackageReference Include="Lykke.Logs" Version="7.3.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.4" />
+    <PackageReference Include="Moq" Version="4.13.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\client\MAVN.Service.Referral.Client\MAVN.Service.Referral.Client.csproj" />
+    <ProjectReference Include="..\..\src\MAVN.Service.Referral.DomainServices\MAVN.Service.Referral.DomainServices.csproj" />
+    <ProjectReference Include="..\..\src\MAVN.Service.Referral.MsSqlRepositories\MAVN.Service.Referral.MsSqlRepositories.csproj" />
+    <ProjectReference Include="..\..\src\MAVN.Service.Referral\MAVN.Service.Referral.csproj" />
+  </ItemGroup>
+</Project>
