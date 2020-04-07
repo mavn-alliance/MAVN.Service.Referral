@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,8 +8,7 @@ using MAVN.Service.Referral.Domain.Models;
 using MAVN.Service.Referral.Domain.Repositories;
 using MAVN.Service.Referral.MsSqlRepositories.Entities;
 using Microsoft.EntityFrameworkCore;
-using ReferralFriendState = Lykke.Service.Referral.MsSqlRepositories.Entities.ReferralFriendState;
-using ReferralHotelState = Lykke.Service.Referral.Domain.Models.ReferralHotelState;
+using ReferralFriendState = MAVN.Service.Referral.MsSqlRepositories.Entities.ReferralFriendState;
 
 namespace MAVN.Service.Referral.MsSqlRepositories.Repositories
 {

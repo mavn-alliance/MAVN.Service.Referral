@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Lykke.RabbitMqBroker.Publisher;
 using Lykke.Service.CustomerProfile.Client;
@@ -61,7 +61,7 @@ namespace MAVN.Service.Referral.Tests.DomainServices.Services
             CustomerProfileResponse = new CustomerProfileResponse
             {
                 ErrorCode = CustomerProfileErrorCodes.None,
-                Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
+                Profile = new CustomerProfile
                 {
                     CustomerId = CustomerId.ToString(),
                     Email = Email,

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -82,7 +82,7 @@ namespace MAVN.Service.Referral.Tests.DomainServices.Services
                 .ReturnsAsync((string customerId, bool includeNonVerified, bool includeDeactivated) => new CustomerProfileResponse
                 {
                     ErrorCode = CustomerProfileErrorCodes.None,
-                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
+                    Profile = new CustomerProfile
                     {
                         Email = _customerEmail,
                         CustomerId = customerId

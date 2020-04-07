@@ -1,4 +1,4 @@
-using Autofac;
+﻿using Autofac;
 using JetBrains.Annotations;
 using Lykke.Common;
 using Lykke.RabbitMqBroker.Publisher;
@@ -104,17 +104,17 @@ namespace MAVN.Service.Referral.Modules
 
         private void RegisterSubscribersForRealEstateFeature(ContainerBuilder builder)
         {
-            builder.RegisterType<PropertyLeadApprovedSubscriber>()
-                .As<IStartStop>()
-                .SingleInstance()
-                .WithParameter("connectionString", _connString)
-                .WithParameter("exchangeName", PropertyLeadApprovedExchangeName);
+            //builder.RegisterType<PropertyLeadApprovedSubscriber>()
+            //    .As<IStartStop>()
+            //    .SingleInstance()
+            //    .WithParameter("connectionString", _connString)
+            //    .WithParameter("exchangeName", PropertyLeadApprovedExchangeName);
 
-            builder.RegisterType<OfferToPurchaseByLeadSubscriber>()
-                .As<IStartStop>()
-                .SingleInstance()
-                .WithParameter("connectionString", _connString)
-                .WithParameter("exchangeName", OfferToPurchasePropertyByLeadExchangeName);
+            //builder.RegisterType<OfferToPurchaseByLeadSubscriber>()
+            //    .As<IStartStop>()
+            //    .SingleInstance()
+            //    .WithParameter("connectionString", _connString)
+            //    .WithParameter("exchangeName", OfferToPurchasePropertyByLeadExchangeName);
         }
     }
 }

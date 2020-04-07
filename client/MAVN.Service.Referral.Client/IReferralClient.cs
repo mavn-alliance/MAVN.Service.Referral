@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 
 namespace MAVN.Service.Referral.Client
 {
@@ -12,7 +12,7 @@ namespace MAVN.Service.Referral.Client
         IReferralApi ReferralApi { get; }
 
         /// <summary>Application ReferralLeadApi interface</summary>
-        IReferralLeadApi ReferralLeadApi { get; }
+        //IReferralLeadApi ReferralLeadApi { get; }
 
         /// <summary>Application ReferralHotelsApi interface</summary>
         IReferralHotelsApi ReferralHotelsApi { get; }

@@ -1,4 +1,4 @@
-using Lykke.HttpClientGenerator;
+﻿using Lykke.HttpClientGenerator;
 
 namespace MAVN.Service.Referral.Client
 {
@@ -13,7 +13,7 @@ namespace MAVN.Service.Referral.Client
         public IReferralApi ReferralApi { get; private set; }
 
         /// <summary>Interface to Referral ReferralLeadApi.</summary>
-        public IReferralLeadApi ReferralLeadApi { get; }
+        //public IReferralLeadApi ReferralLeadApi { get; }
 
         /// <summary>Interface to Referral ReferralHotelsApi.</summary>
         public IReferralHotelsApi ReferralHotelsApi { get; }
@@ -28,7 +28,7 @@ namespace MAVN.Service.Referral.Client
         public ReferralClient(IHttpClientGenerator httpClientGenerator)
         {
             ReferralApi = httpClientGenerator.Generate<IReferralApi>();
-            ReferralLeadApi = httpClientGenerator.Generate<IReferralLeadApi>();
+            //ReferralLeadApi = httpClientGenerator.Generate<IReferralLeadApi>();
             ReferralHotelsApi = httpClientGenerator.Generate<IReferralHotelsApi>();
             ReferralFriendsApi = httpClientGenerator.Generate<IReferralFriendsApi>();
             CommonReferralApi = httpClientGenerator.Generate<ICommonReferralApi>();

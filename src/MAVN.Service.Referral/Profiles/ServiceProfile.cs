@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using AutoMapper;
 using MAVN.Service.Referral.Client.Models.Requests;
@@ -6,7 +6,7 @@ using MAVN.Service.Referral.Client.Models.Responses;
 using MAVN.Service.Referral.Client.Models.Responses.OfferToPurchase;
 using MAVN.Service.Referral.Client.Models.Responses.PropertyPurchase;
 using MAVN.Service.Referral.Domain.Models;
-using CommonReferralModel = Lykke.Service.Referral.Domain.Models.CommonReferralModel;
+using CommonReferralModel = MAVN.Service.Referral.Domain.Models.CommonReferralModel;
 
 namespace MAVN.Service.Referral.Profiles
 {
