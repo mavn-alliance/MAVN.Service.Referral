@@ -1,11 +1,11 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using Lykke.Sdk.Settings;
 using Lykke.Service.AgentManagement.Client;
 using Lykke.Service.Campaign.Client;
 using Lykke.Service.CurrencyConvertor.Client;
 using Lykke.Service.CustomerProfile.Client;
 using Lykke.Service.Dictionaries.Client;
-using Lykke.Service.MAVNPropertyIntegration.Client;
+//using Lykke.Service.MAVNPropertyIntegration.Client;
 using Lykke.Service.PartnerManagement.Client;
 using Lykke.Service.Staking.Client;
 using Lykke.Service.UrlShortener.Client;
@@ -17,7 +17,7 @@ namespace MAVN.Service.Referral.Settings
     {
         public ReferralSettings ReferralService { get; set; }
 
-        public MAVNPropertyIntegrationServiceClientSettings PropertyIntegrationServiceClientSettings { get; set; }
+        //public MAVNPropertyIntegrationServiceClientSettings PropertyIntegrationServiceClientSettings { get; set; }
         
         public CustomerProfileServiceClientSettings CustomerProfileServiceClient { get; set; }
         

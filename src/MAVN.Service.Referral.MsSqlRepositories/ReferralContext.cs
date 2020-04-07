@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using System.Data.Common;
 using JetBrains.Annotations;
 using Lykke.Common.MsSql;
 using MAVN.Service.Referral.MsSqlRepositories.Entities;
 using Microsoft.EntityFrameworkCore;
-using ReferralHotelState = Lykke.Service.Referral.MsSqlRepositories.Entities.ReferralHotelState;
+using ReferralHotelState = MAVN.Service.Referral.MsSqlRepositories.Entities.ReferralHotelState;
 
 namespace MAVN.Service.Referral.MsSqlRepositories
 {

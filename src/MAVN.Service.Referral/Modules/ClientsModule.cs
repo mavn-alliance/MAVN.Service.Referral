@@ -1,11 +1,11 @@
-using Autofac;
+﻿using Autofac;
 using JetBrains.Annotations;
 using Lykke.Service.AgentManagement.Client;
 using Lykke.Service.Campaign.Client;
 using Lykke.Service.CurrencyConvertor.Client;
 using Lykke.Service.CustomerProfile.Client;
 using Lykke.Service.Dictionaries.Client;
-using Lykke.Service.MAVNPropertyIntegration.Client;
+//using Lykke.Service.MAVNPropertyIntegration.Client;
 using Lykke.Service.PartnerManagement.Client;
 using MAVN.Service.Referral.Settings;
 using Lykke.Service.Staking.Client;
@@ -26,8 +26,8 @@ namespace MAVN.Service.Referral.Modules
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterMAVNPropertyIntegrationClient(
-                _appSettings.CurrentValue.PropertyIntegrationServiceClientSettings, null);
+            //builder.RegisterMAVNPropertyIntegrationClient(
+            //    _appSettings.CurrentValue.PropertyIntegrationServiceClientSettings, null);
 
             builder.RegisterCustomerProfileClient(_appSettings.CurrentValue.CustomerProfileServiceClient, null);
 

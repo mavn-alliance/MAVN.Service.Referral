@@ -1,4 +1,4 @@
-using Autofac;
+﻿using Autofac;
 using JetBrains.Annotations;
 using Lykke.Common.Log;
 using Lykke.Sdk;
@@ -66,9 +66,9 @@ namespace MAVN.Service.Referral.Modules
                 .As<IFriendReferralService>()
                 .SingleInstance();
 
-            builder.RegisterType<ReferralLeadService>()
-                .As<IReferralLeadService>()
-                .SingleInstance();
+            //builder.RegisterType<ReferralLeadService>()
+            //    .As<IReferralLeadService>()
+            //    .SingleInstance();
 
             builder.RegisterType<ReferralHotelsService>()
                 .As<IReferralHotelsService>()

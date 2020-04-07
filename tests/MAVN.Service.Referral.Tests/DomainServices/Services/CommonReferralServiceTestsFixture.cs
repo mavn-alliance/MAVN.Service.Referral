@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using MAVN.Service.Referral.Domain.Entities;
 using MAVN.Service.Referral.Domain.Models;
@@ -12,12 +12,12 @@ namespace MAVN.Service.Referral.Tests.DomainServices.Services
     {
         public CommonReferralServiceTestsFixture()
         {
-            ReferralLeadServiceMock = new Mock<IReferralLeadService>(MockBehavior.Strict);
+            //ReferralLeadServiceMock = new Mock<IReferralLeadService>(MockBehavior.Strict);
             ReferralHotelsServiceMock = new Mock<IReferralHotelsService>(MockBehavior.Strict);
             FriendReferralServiceMock = new Mock<IFriendReferralService>(MockBehavior.Strict);
 
             Service = new CommonReferralService(
-                ReferralLeadServiceMock.Object,
+                //ReferralLeadServiceMock.Object,
                 ReferralHotelsServiceMock.Object,
                 FriendReferralServiceMock.Object,
                 MapperHelper.CreateAutoMapper());
@@ -30,7 +30,7 @@ namespace MAVN.Service.Referral.Tests.DomainServices.Services
         }
 
         public Mock<IFriendReferralService> FriendReferralServiceMock { get; set; }
-        public Mock<IReferralLeadService> ReferralLeadServiceMock;
+        //public Mock<IReferralLeadService> ReferralLeadServiceMock;
         public Mock<IReferralHotelsService> ReferralHotelsServiceMock;
         public CommonReferralService Service;
         public List<ReferralLeadWithDetails> ReferralLeadList;
@@ -39,14 +39,14 @@ namespace MAVN.Service.Referral.Tests.DomainServices.Services
 
         public void SetupCalls()
         {
-            ReferralLeadServiceMock.Setup(c => c.GetReferralLeadsForReferrerAsync(It.IsAny<Guid>(), It.IsAny<Guid?>(), It.IsAny<IEnumerable<ReferralLeadState>>()))
-                .ReturnsAsync(() => ReferralLeadList);
+            //ReferralLeadServiceMock.Setup(c => c.GetReferralLeadsForReferrerAsync(It.IsAny<Guid>(), It.IsAny<Guid?>(), It.IsAny<IEnumerable<ReferralLeadState>>()))
+            //    .ReturnsAsync(() => ReferralLeadList);
 
             ReferralHotelsServiceMock.Setup(c => c.GetByReferrerIdAsync(It.IsAny<string>(), It.IsAny<Guid?>(), It.IsAny<IEnumerable<ReferralHotelState>>()))
                 .ReturnsAsync(() => ReferralHotelList);
 
-            ReferralLeadServiceMock.Setup(c => c.GetReferralLeadsByReferralIdsAsync(It.IsAny<List<Guid>>()))
-                .ReturnsAsync(() => ReferralLeadList);
+            //ReferralLeadServiceMock.Setup(c => c.GetReferralLeadsByReferralIdsAsync(It.IsAny<List<Guid>>()))
+            //    .ReturnsAsync(() => ReferralLeadList);
 
             ReferralHotelsServiceMock.Setup(c => c.GetReferralHotelsByReferralIdsAsync(It.IsAny<List<Guid>>()))
                 .ReturnsAsync(() => ReferralHotelList);

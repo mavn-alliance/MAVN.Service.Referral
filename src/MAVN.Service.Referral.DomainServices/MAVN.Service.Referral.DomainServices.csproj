@@ -11,8 +11,6 @@
     <PackageReference Include="Falcon.Service.CustomerManagement.Contract" Version="6.0.0" />
     <PackageReference Include="Falcon.Service.CustomerProfile.Client" Version="7.7.0" />
     <PackageReference Include="Falcon.Service.Dictionaries.Client" Version="1.3.0" />
-    <PackageReference Include="Falcon.Service.MAVNPropertyIntegration.Client" Version="4.5.0" />
-    <PackageReference Include="Falcon.Service.MAVNPropertyIntegration.Contract" Version="3.3.0" />
     <PackageReference Include="Falcon.Service.NotificationSystem.SubscriberContract" Version="1.0.2" />
     <PackageReference Include="Lykke.RabbitMqBroker" Version="7.13.1" />
   </ItemGroup>

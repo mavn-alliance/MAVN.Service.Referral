@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Lykke.Logs;
@@ -87,7 +87,7 @@ namespace MAVN.Service.Referral.Tests.DomainServices.Services
                 .ReturnsAsync(() => new CustomerProfileResponse
                 {
                     ErrorCode = CustomerProfileErrorCodes.None,
-                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
+                    Profile = new CustomerProfile
                     {
                         Email = "another@mail.com"
                     }

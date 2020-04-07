@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,18 +11,18 @@ namespace MAVN.Service.Referral.DomainServices.Services
 {
     public class CommonReferralService: ICommonReferralService
     {
-        private readonly IReferralLeadService _referralLeadService;
+        //private readonly IReferralLeadService _referralLeadService;
         private readonly IReferralHotelsService _referralHotelsService;
         private readonly IFriendReferralService _friendReferralService;
         private readonly IMapper _mapper;
 
         public CommonReferralService(
-            IReferralLeadService referralLeadService,
+            //IReferralLeadService referralLeadService,
             IReferralHotelsService referralHotelsService,
             IFriendReferralService friendReferralService,
             IMapper mapper)
         {
-            _referralLeadService = referralLeadService;
+            //_referralLeadService = referralLeadService;
             _referralHotelsService = referralHotelsService;
             _friendReferralService = friendReferralService;
             _mapper = mapper;
@@ -35,14 +35,14 @@ namespace MAVN.Service.Referral.DomainServices.Services
         {
             var commonReferrals = new List<CommonReferralModel>();
 
-            var referralLeads = await _referralLeadService.GetReferralLeadsForReferrerAsync(
-                customerId,
-                campaignId,
-                _mapper.Map<List<ReferralLeadState>>(statuses));
-            if (referralLeads.Any())
-            {
-                commonReferrals.AddRange(_mapper.Map<List<CommonReferralModel>>(referralLeads));
-            }
+            //var referralLeads = await _referralLeadService.GetReferralLeadsForReferrerAsync(
+            //    customerId,
+            //    campaignId,
+            //    _mapper.Map<List<ReferralLeadState>>(statuses));
+            //if (referralLeads.Any())
+            //{
+            //    commonReferrals.AddRange(_mapper.Map<List<CommonReferralModel>>(referralLeads));
+            //}
 
             var referralHotels = await _referralHotelsService.GetByReferrerIdAsync(
                 customerId.ToString("D"),
@@ -76,11 +76,11 @@ namespace MAVN.Service.Referral.DomainServices.Services
         {
             var commonReferrals = new List<CommonReferralModel>();
 
-            var referralLeads = await _referralLeadService.GetReferralLeadsByReferralIdsAsync(referralIds);
-            if (referralLeads.Any())
-            {
-                commonReferrals.AddRange(_mapper.Map<List<CommonReferralModel>>(referralLeads));
-            }
+            //var referralLeads = await _referralLeadService.GetReferralLeadsByReferralIdsAsync(referralIds);
+            //if (referralLeads.Any())
+            //{
+            //    commonReferrals.AddRange(_mapper.Map<List<CommonReferralModel>>(referralLeads));
+            //}
 
             var referralHotels = await _referralHotelsService.GetReferralHotelsByReferralIdsAsync(referralIds);
             if (referralHotels.Any())
