@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Lykke.Logs;
 using Lykke.RabbitMqBroker.Publisher;
-using Lykke.Service.Campaign.Client;
-using Lykke.Service.Campaign.Client.Models.Campaign.Responses;
-using Lykke.Service.Campaign.Client.Models.Enums;
-using Lykke.Service.CustomerProfile.Client;
-using Lykke.Service.CustomerProfile.Client.Models.Enums;
-using Lykke.Service.CustomerProfile.Client.Models.Requests;
-using Lykke.Service.CustomerProfile.Client.Models.Responses;
+using MAVN.Service.Campaign.Client;
+using MAVN.Service.Campaign.Client.Models.Campaign.Responses;
+using MAVN.Service.Campaign.Client.Models.Enums;
+using MAVN.Service.CustomerProfile.Client;
+using MAVN.Service.CustomerProfile.Client.Models.Enums;
+using MAVN.Service.CustomerProfile.Client.Models.Requests;
+using MAVN.Service.CustomerProfile.Client.Models.Responses;
 using MAVN.Service.Referral.Contract.Events;
 using MAVN.Service.Referral.Domain.Models;
 using MAVN.Service.Referral.Domain.Repositories;
@@ -87,7 +87,7 @@ namespace MAVN.Service.Referral.Tests.DomainServices.Services
                 .ReturnsAsync(() => new CustomerProfileResponse
                 {
                     ErrorCode = CustomerProfileErrorCodes.None,
-                    Profile = new CustomerProfile
+                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
                     {
                         Email = "another@mail.com"
                     }

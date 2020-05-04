@@ -4,14 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Lykke.Logs;
 using Lykke.RabbitMqBroker.Publisher;
-using Lykke.Service.Campaign.Client;
-using Lykke.Service.CurrencyConvertor.Client;
-using Lykke.Service.CurrencyConvertor.Client.Models.Enums;
-using Lykke.Service.CurrencyConvertor.Client.Models.Responses;
-using Lykke.Service.CustomerProfile.Client;
-using Lykke.Service.CustomerProfile.Client.Models.Enums;
-using Lykke.Service.CustomerProfile.Client.Models.Requests;
-using Lykke.Service.CustomerProfile.Client.Models.Responses;
+using MAVN.Service.Campaign.Client;
+using MAVN.Service.CurrencyConvertor.Client;
+using MAVN.Service.CurrencyConvertor.Client.Models.Enums;
+using MAVN.Service.CurrencyConvertor.Client.Models.Responses;
+using MAVN.Service.CustomerProfile.Client;
+using MAVN.Service.CustomerProfile.Client.Models.Enums;
+using MAVN.Service.CustomerProfile.Client.Models.Requests;
+using MAVN.Service.CustomerProfile.Client.Models.Responses;
 using Lykke.Service.PartnerManagement.Client;
 using Lykke.Service.PartnerManagement.Client.Models.Partner;
 using MAVN.Service.Referral.Contract.Events;
@@ -82,7 +82,7 @@ namespace MAVN.Service.Referral.Tests.DomainServices.Services
                 .ReturnsAsync((string customerId, bool includeNonVerified, bool includeDeactivated) => new CustomerProfileResponse
                 {
                     ErrorCode = CustomerProfileErrorCodes.None,
-                    Profile = new CustomerProfile
+                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
                     {
                         Email = _customerEmail,
                         CustomerId = customerId

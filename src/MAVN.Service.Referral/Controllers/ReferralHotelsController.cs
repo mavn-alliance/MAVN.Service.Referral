@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
 using Common;
 using Lykke.Common.Log;
-using Lykke.Service.CustomerProfile.Client;
+using MAVN.Service.CustomerProfile.Client;
 using MAVN.Service.Referral.Client;
 using MAVN.Service.Referral.Client.Enums;
 using MAVN.Service.Referral.Client.Models.Requests;

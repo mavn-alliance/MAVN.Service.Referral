@@ -1,15 +1,15 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common.Log;
-using Lykke.Service.Campaign.Client;
-using Lykke.Service.Campaign.Client.Models.Enums;
+using MAVN.Service.Campaign.Client;
+using MAVN.Service.Campaign.Client.Models.Enums;
 using MAVN.Service.Referral.Domain.Exceptions;
 using MAVN.Service.Referral.Domain.Models;
 using MAVN.Service.Referral.Domain.Services;
-using Lykke.Service.Staking.Client;
-using Lykke.Service.Staking.Client.Models;
+using MAVN.Service.Staking.Client;
+using MAVN.Service.Staking.Client.Models;
 
 namespace MAVN.Service.Referral.DomainServices.Services
 {

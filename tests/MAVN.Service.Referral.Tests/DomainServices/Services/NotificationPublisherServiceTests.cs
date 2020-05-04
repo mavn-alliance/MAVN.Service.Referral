@@ -1,6 +1,6 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Falcon.Common;
-using Lykke.Service.NotificationSystem.SubscriberContract;
+using MAVN.Service.NotificationSystem.SubscriberContract;
 using Lykke.Service.UrlShortener.Client.Models;
 using Moq;
 using Xunit;
