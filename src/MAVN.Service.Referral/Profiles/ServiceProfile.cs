@@ -10,7 +10,7 @@ using CommonReferralModel = MAVN.Service.Referral.Domain.Models.CommonReferralMo
 
 namespace MAVN.Service.Referral.Profiles
 {
-    public class ServiceProfile: Profile
+    public class ServiceProfile : Profile
     {
         public ServiceProfile()
         {
@@ -25,46 +25,6 @@ namespace MAVN.Service.Referral.Profiles
                 .ForMember(c => c.ErrorMessage, opt => opt.Ignore())
                 .ForSourceMember(c => c.CustomerId, opt => opt.DoNotValidate())
                 .ForSourceMember(c => c.Id, opt => opt.DoNotValidate());
-
-            // Referral lead
-            CreateMap<ReferralLeadCreateRequest, ReferralLead>(MemberList.Source)
-                .ForMember(c => c.AgentId, opt => opt.MapFrom(c => c.CustomerId))
-                .ForMember(c => c.Id, opt => opt.Ignore())
-                .ForMember(c => c.SalesforceId, opt => opt.Ignore())
-                .ForMember(c => c.CreationDateTime, opt => opt.Ignore())
-                .ForMember(c => c.ResponseStatus, opt => opt.Ignore())
-                .ForMember(c => c.AgentSalesforceId, opt => opt.Ignore())
-                .ForMember(c => c.ConfirmationToken, opt => opt.Ignore())
-                .ForMember(c => c.State, opt => opt.Ignore());
-
-            CreateMap<ReferralLead, ReferralLeadCreateRequest>(MemberList.Source)
-                .ForMember(c => c.CustomerId, opt => opt.MapFrom(c => c.AgentId))
-                .ForSourceMember(c => c.Id, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.SalesforceId, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.CreationDateTime, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.ResponseStatus, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.AgentSalesforceId, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.ConfirmationToken, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.State, opt => opt.DoNotValidate());
-            
-            CreateMap<ReferralLeadWithDetails, ReferralLeadModel>(MemberList.Source)
-                .ForSourceMember(c => c.ResponseStatus, opt => opt.DoNotValidate());
-
-            CreateMap<ReferralLead, ApprovedReferralLeadModel>(MemberList.Destination)
-                .ForMember(c => c.ReferralLeadId, opt => opt.MapFrom(dest => dest.Id))
-                .ForMember(c => c.Timestamp, opt => opt.MapFrom(dest => dest.CreationDateTime))
-                .ForSourceMember(c => c.FirstName, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.LastName, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.PhoneCountryCodeId, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.PhoneNumber, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.Email, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.Note, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.AgentId, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.AgentSalesforceId, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.ResponseStatus, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.ConfirmationToken, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.State, opt => opt.DoNotValidate())
-                .ForSourceMember(c => c.CreationDateTime, opt => opt.DoNotValidate());
 
             // Property purchase
             CreateMap<PropertyPurchase, PropertyPurchaseModel>(MemberList.Destination);
@@ -115,8 +75,6 @@ namespace MAVN.Service.Referral.Profiles
             // Common Referrals
             CreateMap<Client.Enums.ReferralType, Domain.Models.ReferralType>(MemberList.Destination);
             CreateMap<Client.Enums.CommonReferralStatus, Domain.Models.CommonReferralStatus>(MemberList.Destination);
-            CreateMap<Domain.Models.CommonReferralStatus, Domain.Entities.ReferralLeadState>(MemberList.Source)
-                .ConvertUsing(value => ConvertCommonReferralStatusToLeadState(value));
             CreateMap<Domain.Models.CommonReferralStatus, Domain.Models.ReferralHotelState>(MemberList.Source)
                 .ConvertUsing(value => ConvertCommonReferralStatusToHotelState(value));
             CreateMap<Domain.Models.CommonReferralStatus, Domain.Models.ReferralFriendState>(MemberList.Source)
@@ -124,16 +82,9 @@ namespace MAVN.Service.Referral.Profiles
 
             CreateMap<Domain.Models.ReferralHotelState, Domain.Models.CommonReferralStatus>(MemberList.Source)
                 .ConvertUsing(value => ConvertHotelStateToCommonReferralStatus(value));
-            CreateMap<Domain.Entities.ReferralLeadState, Domain.Models.CommonReferralStatus>(MemberList.Source)
-                .ConvertUsing(value => ConvertLeadStateToCommonReferralStatus(value));
+
             CreateMap<Domain.Models.ReferralFriendState, Domain.Models.CommonReferralStatus>(MemberList.Source)
                 .ConvertUsing(value => ConvertFriendStateToCommonReferralStatus(value));
-
-            CreateMap<ReferralLeadWithDetails, CommonReferralModel>(MemberList.Destination)
-                .ForMember(dest => dest.TimeStamp, opt => opt.MapFrom(src => src.CreationDateTime))
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.State))
-                .ForMember(dest => dest.ReferralType, opt => opt.MapFrom(src => ReferralType.RealEstate))
-                .ForMember(dest => dest.PartnerId, opt => opt.Ignore());
 
             CreateMap<ReferralHotelWithProfile, CommonReferralModel>(MemberList.Destination)
                 .ForMember(dest => dest.TimeStamp, opt => opt.MapFrom(src => src.CreationDateTime))
@@ -216,21 +167,6 @@ namespace MAVN.Service.Referral.Profiles
             }
         }
 
-        private Domain.Entities.ReferralLeadState ConvertCommonReferralStatusToLeadState(CommonReferralStatus value)
-        {
-            switch (value)
-            {
-                case CommonReferralStatus.Pending:
-                    return Domain.Entities.ReferralLeadState.Pending;
-                case CommonReferralStatus.Confirmed:
-                    return Domain.Entities.ReferralLeadState.Confirmed;
-                case CommonReferralStatus.Accepted:
-                    return Domain.Entities.ReferralLeadState.Approved;
-                default:
-                    return Domain.Entities.ReferralLeadState.Rejected;
-            }
-        }
-
         private CommonReferralStatus ConvertHotelStateToCommonReferralStatus(ReferralHotelState value)
         {
             switch (value)
@@ -261,19 +197,6 @@ namespace MAVN.Service.Referral.Profiles
             }
         }
 
-        private CommonReferralStatus ConvertLeadStateToCommonReferralStatus(Domain.Entities.ReferralLeadState value)
-        {
-            switch (value)
-            {
-                case Domain.Entities.ReferralLeadState.Pending:
-                    return CommonReferralStatus.Pending;
-                case Domain.Entities.ReferralLeadState.Confirmed:
-                    return CommonReferralStatus.Confirmed;
-                case Domain.Entities.ReferralLeadState.Approved:
-                    return CommonReferralStatus.Accepted;
-                default:
-                    return CommonReferralStatus.Expired;
-            }
-        }
     }
 }
+

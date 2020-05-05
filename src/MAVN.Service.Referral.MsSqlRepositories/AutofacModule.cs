@@ -1,4 +1,4 @@
-using Autofac;
+﻿using Autofac;
 using Lykke.Common.MsSql;
 using MAVN.Service.Referral.Domain.Repositories;
 using MAVN.Service.Referral.MsSqlRepositories.Repositories;
@@ -29,20 +29,8 @@ namespace MAVN.Service.Referral.MsSqlRepositories
                 .As<IFriendReferralHistoryRepository>()
                 .SingleInstance();
 
-            builder.RegisterType<PropertyPurchaseRepository>()
-                .As<IPropertyPurchaseRepository>()
-                .SingleInstance();
-
-            builder.RegisterType<ReferralLeadRepository>()
-                .As<IReferralLeadRepository>()
-                .SingleInstance();
-
             builder.RegisterType<ReferralHotelsRepository>()
                 .As<IReferralHotelsRepository>()
-                .SingleInstance();
-
-            builder.RegisterType<OfferToPurchasePurchaseRepository>()
-                .As<IOfferToPurchasePurchaseRepository>()
                 .SingleInstance();
         }
     }

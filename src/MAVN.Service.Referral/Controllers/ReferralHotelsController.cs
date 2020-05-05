@@ -41,9 +41,9 @@ namespace MAVN.Service.Referral.Controllers
         }
 
         /// <inheritdoc/>
-        /// <response code="200">ReferralLeadCreateResponse.</response>
+        /// <response code="200">ReferralHotelCreateResponse.</response>
         [HttpPost("")]
-        [ProducesResponseType(typeof(ReferralLeadCreateResponse), (int) HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ReferralHotelCreateResponse), (int) HttpStatusCode.OK)]
         public async Task<ReferralHotelCreateResponse> CreateAsync(ReferralHotelCreateRequest request)
         {
             try

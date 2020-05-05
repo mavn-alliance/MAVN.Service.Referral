@@ -15,9 +15,6 @@ namespace MAVN.Service.Referral.MsSqlRepositories
         public DbSet<ReferralEntity> Referrals { get; set; }
         public DbSet<FriendReferralEntity> FriendReferrals { get; set; }
         public DbSet<PurchaseReferralHistoryEntity> PurchaseReferrals { get; set; }
-        public DbSet<ReferralLeadEntity> ReferralLeads { get; set; }
-        public DbSet<PropertyPurchaseEntity> PropertyPurchases { get; set; }
-        public DbSet<OfferToPurchaseEntity> OfferToPurchases { get; set; }
         public DbSet<ReferralHotelEntity> ReferralHotels { get; set; }
 
         // C-tor for EF migrations
@@ -65,18 +62,6 @@ namespace MAVN.Service.Referral.MsSqlRepositories
                 .HasForeignKey(e => e.ReferrerId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<ReferralLeadEntity>()
-                .HasMany(e => e.OffersToPurchase)
-                .WithOne()
-                .HasForeignKey(e => e.ReferId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<ReferralLeadEntity>()
-                .HasMany(e => e.PropertyPurchases)
-                .WithOne()
-                .HasForeignKey(e => e.ReferralLeadId)
-                .OnDelete(DeleteBehavior.Restrict);
-            
             modelBuilder
                 .Entity<ReferralHotelEntity>()
                 .Property(e => e.State)
