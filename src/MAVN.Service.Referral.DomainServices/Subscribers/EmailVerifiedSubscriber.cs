@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Lykke.Common.Log;
-using Lykke.Service.CustomerManagement.Contract.Events;
+using MAVN.Service.CustomerManagement.Contract.Events;
 using MAVN.Service.Referral.Domain.Services;
 
 namespace MAVN.Service.Referral.DomainServices.Subscribers

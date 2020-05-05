@@ -67,11 +67,6 @@ namespace MAVN.Service.Referral.Tests.DomainServices.Services
             // Arrange
             var fixture = new CommonReferralServiceTestsFixture()
             {
-                //ReferralLeadList = new List<ReferralLeadWithDetails>
-                //{
-                //    new ReferralLeadWithDetails { Id = Guid.NewGuid() },
-                //    new ReferralLeadWithDetails { Id = Guid.NewGuid() }
-                //},
                 ReferralHotelList = new List<ReferralHotelWithProfile>
                 {
                     new ReferralHotelWithProfile { Id = Guid.NewGuid().ToString("D") },
@@ -90,8 +85,6 @@ namespace MAVN.Service.Referral.Tests.DomainServices.Services
                 Guid.NewGuid(),
                 new List<CommonReferralStatus> { CommonReferralStatus.Accepted });
 
-            //Assert.Equal(6, referrals.Count);
-            //Assert.Equal(2, referrals.Count(r => r.ReferralType == ReferralType.RealEstate));
             Assert.Equal(3, referrals.Count(r => r.ReferralType == ReferralType.Hospitality));
             Assert.Equal(1, referrals.Count(r => r.ReferralType == ReferralType.Friend));
         }

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Lykke.RabbitMqBroker.Publisher;
-using Lykke.Service.CustomerProfile.Client;
-using Lykke.Service.CustomerProfile.Client.Models.Enums;
-using Lykke.Service.CustomerProfile.Client.Models.Responses;
-using Lykke.Service.NotificationSystem.SubscriberContract;
+using MAVN.Service.CustomerProfile.Client;
+using MAVN.Service.CustomerProfile.Client.Models.Enums;
+using MAVN.Service.CustomerProfile.Client.Models.Responses;
+using MAVN.Service.NotificationSystem.SubscriberContract;
 using MAVN.Service.Referral.Domain.Services;
 using MAVN.Service.Referral.DomainServices;
 using MAVN.Service.Referral.DomainServices.Services;
@@ -61,7 +61,7 @@ namespace MAVN.Service.Referral.Tests.DomainServices.Services
             CustomerProfileResponse = new CustomerProfileResponse
             {
                 ErrorCode = CustomerProfileErrorCodes.None,
-                Profile = new CustomerProfile
+                Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
                 {
                     CustomerId = CustomerId.ToString(),
                     Email = Email,

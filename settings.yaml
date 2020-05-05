@@ -76,9 +76,6 @@ ReferralService:
 PropertyIntegrationServiceClientSettings:
     ServiceUrl:
         settings-key: PropertyIntegrationServiceUrl
-AgentManagementServiceClient:
-    ServiceUrl:
-        settings-key: AgentManagementServiceUrl
 DictionariesServiceClient:
     ServiceUrl:
         settings-key: DictionariesServiceUrl

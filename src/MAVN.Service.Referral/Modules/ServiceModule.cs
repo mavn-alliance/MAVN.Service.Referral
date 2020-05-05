@@ -94,12 +94,6 @@ namespace MAVN.Service.Referral.Modules
                 .As<ICommonReferralService>()
                 .SingleInstance();
 
-            builder.RegisterType<DemoLeadService>()
-                .As<IDemoLeadService>()
-                .WithParameter("referralExpirationPeriod", _appSettings.CurrentValue.ReferralService.ReferralHotelExpirationPeriod)
-                .WithParameter("delay", _appSettings.CurrentValue.ReferralService.DemoOperationDelay)
-                .SingleInstance();
-
             builder.RegisterType<DemoHotelService>()
                 .As<IDemoHotelService>()
                 .WithParameter("referralExpirationPeriod", _appSettings.CurrentValue.ReferralService.ReferralHotelExpirationPeriod)

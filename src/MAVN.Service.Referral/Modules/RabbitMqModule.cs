@@ -2,7 +2,7 @@
 using JetBrains.Annotations;
 using Lykke.Common;
 using Lykke.RabbitMqBroker.Publisher;
-using Lykke.Service.NotificationSystem.SubscriberContract;
+using MAVN.Service.NotificationSystem.SubscriberContract;
 using MAVN.Service.Referral.Contract.Events;
 using MAVN.Service.Referral.DomainServices.Subscribers;
 using MAVN.Service.Referral.Settings;

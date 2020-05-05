@@ -1,13 +1,13 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Lykke.Common;
 using Lykke.RabbitMqBroker.Publisher;
-using Lykke.Service.CustomerProfile.Client;
-using Lykke.Service.NotificationSystem.SubscriberContract;
-using MAVN.Service.Referral.Domain.Services;
+using MAVN.Service.CustomerProfile.Client;
+using MAVN.Service.NotificationSystem.SubscriberContract;
 using Lykke.Service.UrlShortener.Client;
 using Lykke.Service.UrlShortener.Client.Models;
+using MAVN.Service.Referral.Domain.Services;
 
 namespace MAVN.Service.Referral.DomainServices.Services
 {

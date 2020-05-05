@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Lykke.Service.CustomerProfile.Client.Models.Enums;
-using Lykke.Service.CustomerProfile.Client.Models.Responses;
+using MAVN.Service.CustomerProfile.Client.Models.Enums;
+using MAVN.Service.CustomerProfile.Client.Models.Responses;
 using MAVN.Service.Referral.Contract.Events;
 using MAVN.Service.Referral.Domain.Exceptions;
 using MAVN.Service.Referral.Domain.Models;
