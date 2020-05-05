@@ -11,9 +11,6 @@ namespace MAVN.Service.Referral.Client
         /// <summary>Application ReferralApi interface</summary>
         IReferralApi ReferralApi { get; }
 
-        /// <summary>Application ReferralLeadApi interface</summary>
-        //IReferralLeadApi ReferralLeadApi { get; }
-
         /// <summary>Application ReferralHotelsApi interface</summary>
         IReferralHotelsApi ReferralHotelsApi { get; }
 
