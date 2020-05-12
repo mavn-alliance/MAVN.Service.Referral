@@ -5,9 +5,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Lykke.Common" Version="7.5.0" />
-    <PackageReference Include="MAVN.Service.Campaign.Client" Version="1.0.1" />
-    <PackageReference Include="MAVN.Service.PartnerManagement.Client" Version="1.0.4" />
-    <PackageReference Include="MAVN.Service.Staking.Client" Version="1.0.1" />
+    <PackageReference Include="MAVN.Numerics" Version="1.0.0" />
+    <PackageReference Include="MAVN.Service.Campaign.Client" Version="1.1.1" />
+    <PackageReference Include="MAVN.Service.PartnerManagement.Client" Version="1.4.0" />
+    <PackageReference Include="MAVN.Service.Staking.Client" Version="1.1.1" />
     <PackageReference Include="MAVN.Service.UrlShortener.Client" Version="1.0.1" />
   </ItemGroup>
 </Project>

@@ -4,7 +4,7 @@ using MAVN.Service.Campaign.Client;
 using MAVN.Service.CurrencyConvertor.Client;
 using MAVN.Service.CustomerProfile.Client;
 using MAVN.Service.Dictionaries.Client;
-using Lykke.Service.PartnerManagement.Client;
+using MAVN.Service.PartnerManagement.Client;
 using MAVN.Service.Staking.Client;
 using Lykke.Service.UrlShortener.Client;
 

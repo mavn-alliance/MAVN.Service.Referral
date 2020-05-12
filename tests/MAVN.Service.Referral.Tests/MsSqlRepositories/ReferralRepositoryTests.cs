@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.Referral.MsSqlRepositories;
 using MAVN.Service.Referral.MsSqlRepositories.Repositories;
 using MAVN.Service.Referral.Tests.MsSqlRepositories.Fixtures;

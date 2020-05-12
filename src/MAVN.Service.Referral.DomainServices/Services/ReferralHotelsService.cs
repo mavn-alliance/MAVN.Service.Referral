@@ -13,7 +13,7 @@ using MAVN.Service.CurrencyConvertor.Client.Models.Enums;
 using MAVN.Service.CustomerProfile.Client;
 using MAVN.Service.CustomerProfile.Client.Models.Enums;
 using MAVN.Service.CustomerProfile.Client.Models.Requests;
-using Lykke.Service.PartnerManagement.Client;
+using MAVN.Service.PartnerManagement.Client;
 using MAVN.Service.Referral.Contract.Events;
 using MAVN.Service.Referral.Domain.Exceptions;
 using MAVN.Service.Referral.Domain.Managers;
