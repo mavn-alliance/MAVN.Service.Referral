@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Data.Common;
 using JetBrains.Annotations;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.Referral.MsSqlRepositories.Entities;
 using Microsoft.EntityFrameworkCore;
 using ReferralHotelState = MAVN.Service.Referral.MsSqlRepositories.Entities.ReferralHotelState;
 
 namespace MAVN.Service.Referral.MsSqlRepositories
 {
-    public class ReferralContext : MsSqlContext
+    public class ReferralContext : PostgreSQLContext
     {
         private const string Schema = "referral";
 
@@ -44,7 +44,7 @@ namespace MAVN.Service.Referral.MsSqlRepositories
         {
         }
 
-        protected override void OnLykkeModelCreating(ModelBuilder modelBuilder)
+        protected override void OnMAVNModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ReferralEntity>()
                 .HasIndex(b => b.ReferralCode)
