@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.Referral.Domain.Models;
 using MAVN.Service.Referral.Domain.Repositories;
 using MAVN.Service.Referral.MsSqlRepositories.Entities;

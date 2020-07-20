@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.Referral.Domain.Models;
 using MAVN.Service.Referral.Domain.Repositories;
 using MAVN.Service.Referral.MsSqlRepositories.Entities;
@@ -14,11 +14,11 @@ namespace MAVN.Service.Referral.MsSqlRepositories.Repositories
 {
     public class ReferralHotelsRepository : IReferralHotelsRepository
     {
-        private readonly MsSqlContextFactory<ReferralContext> _msSqlContextFactory;
+        private readonly PostgreSQLContextFactory<ReferralContext> _msSqlContextFactory;
         private readonly IMapper _mapper;
 
         public ReferralHotelsRepository(
-            MsSqlContextFactory<ReferralContext> msSqlContextFactory, IMapper mapper)
+            PostgreSQLContextFactory<ReferralContext> msSqlContextFactory, IMapper mapper)
         {
             _msSqlContextFactory = msSqlContextFactory;
             _mapper = mapper;

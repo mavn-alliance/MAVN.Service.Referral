@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.Referral.Domain.Repositories;
 using MAVN.Service.Referral.MsSqlRepositories.Repositories;
 
@@ -16,7 +16,7 @@ namespace MAVN.Service.Referral.MsSqlRepositories
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterMsSql(
+            builder.RegisterPostgreSQL(
                 _connectionString,
                 connString => new ReferralContext(connString, false),
                 dbConn => new ReferralContext(dbConn));
